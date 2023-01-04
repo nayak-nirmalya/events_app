@@ -2,12 +2,11 @@ const Page = () => {
   return (
     <div>
       <h1>Events Page</h1>
-      <p>
-        A tiny VS Code extension made up of a few commands that generate and
-        insert lorem ipsum text into a text file. To use the extension, open the
-        command palette (F1 or cmd/ctrl+shift+p, type "lorem ipsum" and select
-        to insert either a line or paragraph.
-      </p>
+      <div>
+        <h2>Events in India</h2>
+        <h2>Events in Kendrapara</h2>
+        <h2>Events in Odisha</h2>
+      </div>
     </div>
   )
 }
