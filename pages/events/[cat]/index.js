@@ -12,3 +12,20 @@ const EventsCatPage = () => {
 }
 
 export default EventsCatPage
+
+export async function getStaticPaths() {
+  const { events_categories } = await import('/data/data.json')
+  const allPaths = events_categories.map((event) => {
+    return {
+      params: {
+        cat: event.id.toString(),
+      },
+    }
+  })
+  console.log(allPaths)
+
+  return {
+    paths: allPaths,
+    fallback: false,
+  }
+}
