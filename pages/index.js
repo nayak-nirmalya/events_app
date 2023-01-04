@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
+import { HomePage } from '../src/components/home/home-page'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,23 +25,7 @@ export default function Home({ data }) {
         </nav>
       </header>
 
-      <main className={styles.main}>
-        {data.map((event, index) => (
-          <div key={index} id={event.id}>
-            <Link href={`/events/${event.id}`}>
-              <Image
-                priority
-                width={200}
-                height={200}
-                alt={event.title}
-                src={event.image}
-              />
-              <h2>{event.title}</h2>
-              <p>{event.description}</p>
-            </Link>
-          </div>
-        ))}
-      </main>
+      <HomePage data={data} />
 
       <footer className={styles.footer}>
         <p> © 2023 Nirmalya - A Project Built with Next.js </p>
