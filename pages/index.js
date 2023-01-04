@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home({ title }) {
+export default function Home({ data }) {
   return (
     <>
       <Head>
@@ -25,36 +25,20 @@ export default function Home({ title }) {
       </header>
 
       <main className={styles.main}>
-        <a href="">
-          <img />
-          <h2>{title}</h2>
-          <p>
-            A tiny VS Code extension made up of a few commands that generate and
-            insert lorem ipsum text into a text file. To use the extension, open
-            the command palette (F1 or cmd/ctrl+shift+p, type "lorem ipsum" and
-            select to insert either a line or paragraph.
-          </p>
-        </a>
-        <a href="">
-          <img />
-          <h2>Events in Kendrapara</h2>
-          <p>
-            A tiny VS Code extension made up of a few commands that generate and
-            insert lorem ipsum text into a text file. To use the extension, open
-            the command palette (F1 or cmd/ctrl+shift+p, type "lorem ipsum" and
-            select to insert either a line or paragraph.
-          </p>
-        </a>
-        <a href="">
-          <img />
-          <h2>Events in Odisha</h2>
-          <p>
-            A tiny VS Code extension made up of a few commands that generate and
-            insert lorem ipsum text into a text file. To use the extension, open
-            the command palette (F1 or cmd/ctrl+shift+p, type "lorem ipsum" and
-            select to insert either a line or paragraph.
-          </p>
-        </a>
+        {data.map((event, index) => (
+          <div key={index} id={event.id}>
+            <a href={`/events/${event.id}`}>
+              <Image
+                width={200}
+                height={200}
+                alt={event.title}
+                src={event.image}
+              />
+              <h2>{event.title}</h2>
+              <p>{event.description}</p>
+            </a>
+          </div>
+        ))}
       </main>
 
       <footer className={styles.footer}>
@@ -64,10 +48,13 @@ export default function Home({ title }) {
   )
 }
 
-export function getServerSideProps() {
+export async function getServerSideProps() {
+  const { events_categories } = await import('../data/data.json')
+  // console.log(events_categories)
+
   return {
     props: {
-      title: 'Test!',
+      data: events_categories,
     },
   }
 }
