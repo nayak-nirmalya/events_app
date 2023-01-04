@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const HomePage = ({ data }) => (
-  <main>
+  <>
     {data.map((event, index) => (
       <div key={index} id={event.id}>
         <Link href={`/events/${event.id}`}>
@@ -18,5 +18,5 @@ export const HomePage = ({ data }) => (
         </Link>
       </div>
     ))}
-  </main>
+  </>
 )
