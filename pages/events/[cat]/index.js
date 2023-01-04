@@ -10,14 +10,10 @@ String.prototype.toTitle = function () {
 const EventsCatPage = ({ data, pageName }) => {
   return (
     <div>
-      <h1>Events in {pageName.toString().toTitle()}</h1>
+      <h1>Events in {pageName.toString().replace('-', ' ').toTitle()}</h1>
       <div>
         {data.map((event, index) => (
-          <Link
-            key={event.id}
-            href={`/events/${event.city}/${event.id}`}
-            // passHref
-          >
+          <Link key={event.id} href={`/events/${event.city}/${event.id}`}>
             <Image
               priority={true}
               src={event.image}
