@@ -7,10 +7,10 @@ String.prototype.toTitle = function () {
   })
 }
 
-const EventsCatPage = ({ data }) => {
+const EventsCatPage = ({ data, pageName }) => {
   return (
     <div>
-      <h1>Events in {data[0].city.toString().toTitle()}</h1>
+      <h1>Events in {pageName.toString().toTitle()}</h1>
       <div>
         {data.map((event, index) => (
           <Link
@@ -62,6 +62,6 @@ export async function getStaticProps(context) {
   // console.log(data)
 
   return {
-    props: { data },
+    props: { data, pageName: id },
   }
 }
