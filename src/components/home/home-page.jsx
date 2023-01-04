@@ -1,10 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import styles from '../../../styles/Home.module.css'
-
 export const HomePage = ({ data }) => (
-  <main className={styles.main}>
+  <main>
     {data.map((event, index) => (
       <div key={index} id={event.id}>
         <Link href={`/events/${event.id}`}>
