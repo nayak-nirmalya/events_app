@@ -1,11 +1,12 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 const EventsPage = ({ data }) => {
   return (
     <div>
-      <h1>Event</h1>
+      <h1>Events Page</h1>
       {data.map((event, index) => (
-        <a key={index} href={`/events/${event.id}`}>
+        <Link key={index} href={`/events/${event.id}`}>
           <Image
             priority={true}
             src={event.image}
@@ -14,7 +15,7 @@ const EventsPage = ({ data }) => {
             alt={event.title}
           />
           <h2>{event.title}</h2>
-        </a>
+        </Link>
       ))}
     </div>
   )
