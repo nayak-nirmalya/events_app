@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home({ title }) {
   return (
     <>
       <Head>
@@ -27,7 +27,7 @@ export default function Home() {
       <main className={styles.main}>
         <a href="">
           <img />
-          <h2>Events in India</h2>
+          <h2>{title}</h2>
           <p>
             A tiny VS Code extension made up of a few commands that generate and
             insert lorem ipsum text into a text file. To use the extension, open
@@ -62,4 +62,12 @@ export default function Home() {
       </footer>
     </>
   )
+}
+
+export function getServerSideProps() {
+  return {
+    props: {
+      title: 'Test!',
+    },
+  }
 }
