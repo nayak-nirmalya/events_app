@@ -6,9 +6,8 @@ export const Header = () => (
     <div>
       <div className="topNav">
         <Image
-          className="img"
           alt="Nirmalya Nayak"
-          src={'/images/logo_black.png'}
+          src={'/images/sticker.png'}
           width={50}
           height={50}
         />
@@ -24,7 +23,6 @@ export const Header = () => (
               <Link href="/about-us">About Us</Link>
             </li>
           </ul>
-          <img />
         </nav>
       </div>
       <p className="title">Sed ut perspiciatis unde omnis.</p>
