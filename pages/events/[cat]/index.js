@@ -1,5 +1,4 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import { CatEvent } from '../../../src/components/events/cat-event'
 
 String.prototype.toTitle = function () {
   return this.replace(/(^|\s)\S/g, function (t) {
@@ -7,28 +6,9 @@ String.prototype.toTitle = function () {
   })
 }
 
-const EventsCatPage = ({ data, pageName }) => {
-  return (
-    <div>
-      <h1>Events in {pageName.toString().replace('-', ' ').toTitle()}</h1>
-      <div>
-        {data.map((event, index) => (
-          <Link key={event.id} href={`/events/${event.city}/${event.id}`}>
-            <Image
-              priority={true}
-              src={event.image}
-              width={200}
-              height={200}
-              alt={event.title}
-            />
-            <h2>{event.title}</h2>
-            <p>{event.description}</p>
-          </Link>
-        ))}
-      </div>
-    </div>
-  )
-}
+const EventsCatPage = ({ data, pageName }) => (
+  <CatEvent data={data} pageName={pageName} />
+)
 
 export default EventsCatPage
 
@@ -41,7 +21,6 @@ export async function getStaticPaths() {
       },
     }
   })
-  // console.log(allPaths)
 
   return {
     paths: allPaths,
@@ -50,12 +29,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  // console.log(context)
   const id = context?.params.cat
   const { allEvents } = await import('/data/data.json')
 
   const data = allEvents.filter((event) => id === event.city)
-  // console.log(data)
 
   return {
     props: { data, pageName: id },
