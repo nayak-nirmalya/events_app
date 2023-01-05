@@ -82,7 +82,7 @@
       "city": "san-francisco",
       "description": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscisfa.",
       "image": "https://images.unsplash.com/photo-1521464302861-ce943915d1c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
-      "emails_registered": ["nayak@ilu.com", ""]
+      "emails_registered": ["nayak@ilu.com"]
     },
     {
       "id": "fan-expo-san-francisco",
@@ -98,7 +98,11 @@
       "city": "san-francisco",
       "description": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscisfa.",
       "image": "https://images.unsplash.com/photo-1580809361436-42a7ec204889?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
-      "emails_registered": []
+      "emails_registered": [
+        "nirmalya@nayak.com",
+        "ilu.nirmalya@gmail.com",
+        "ilu.nirmalya@yahoo.com"
+      ]
     },
     {
       "id": "concert-christian-löffler-+-detect-ensemble",
