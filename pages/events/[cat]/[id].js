@@ -2,7 +2,8 @@ import Image from 'next/image'
 
 const EventPage = ({ data }) => {
   return (
-    <div>
+    <div className="event">
+      <h1>{data.title}</h1>
       <Image
         priority
         src={data.image}
@@ -10,7 +11,6 @@ const EventPage = ({ data }) => {
         height={500}
         alt={data.title}
       />
-      <h1>{data.title}</h1>
       <p>{data.description}</p>
     </div>
   )
