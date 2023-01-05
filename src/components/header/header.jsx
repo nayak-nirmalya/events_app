@@ -27,7 +27,7 @@ export const Header = () => (
           <img />
         </nav>
       </div>
-      <h1>Header H1 Tag. Hi, Everyone.</h1>
+      <p className="title">Sed ut perspiciatis unde omnis.</p>
     </div>
   </header>
 )
