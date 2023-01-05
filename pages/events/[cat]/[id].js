@@ -1,20 +1,6 @@
-import Image from 'next/image'
+import { SingleEvent } from '../../../src/components/events/single-event'
 
-const EventPage = ({ data }) => {
-  return (
-    <div className="event">
-      <h1>{data.title}</h1>
-      <Image
-        priority
-        src={data.image}
-        width={1000}
-        height={500}
-        alt={data.title}
-      />
-      <p>{data.description}</p>
-    </div>
-  )
-}
+const EventPage = ({ data }) => <SingleEvent data={data} />
 
 export default EventPage
 
