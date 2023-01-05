@@ -28,7 +28,7 @@ export const SingleEvent = ({ data }) => {
         body: JSON.stringify({ email: emailValue, eventId }),
       })
 
-      if (!response.ok) throw new Error(`Error: ${response.status}`)
+      //   if (!response.ok) throw new Error(`Error: ${response.status}`)
       const data = await response.json()
       setMessage(data.message)
       inputEmail.current.value = ''

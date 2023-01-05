@@ -22,14 +22,16 @@ export default function handler(req, res) {
       return
     }
 
+    const event = allEvents.find((ev) => ev.id === eventId)
+    if (event.emails_registered.includes(email)) {
+      res.status(401).json({
+        message: 'E-Mail Already Registered!',
+      })
+      return
+    }
+
     const newAllEvents = allEvents.map((event) => {
       if (event.id === eventId) {
-        if (event.emails_registered.includes(email)) {
-          res.status(401).json({
-            message: 'E-Mail Already Registered!',
-          })
-          return event
-        }
         return {
           ...event,
           emails_registered: [...event.emails_registered, email],
